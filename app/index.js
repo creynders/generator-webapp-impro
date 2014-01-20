@@ -30,6 +30,7 @@ var AppGenerator = module.exports = function Appgenerator(args, options, config)
   this.options = options;
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
+  this.configPath = 'config';
 };
 
 util.inherits(AppGenerator, yeoman.generators.Base);
@@ -79,6 +80,35 @@ AppGenerator.prototype.askFor = function askFor() {
 
 AppGenerator.prototype.gruntfile = function gruntfile() {
   this.template('Gruntfile.js');
+  this.template(this.configPath+'/autoprefixer.js');
+  this.template(this.configPath+'/bowerInstall.js');
+  this.template(this.configPath+'/clean.js');
+  this.template(this.configPath+'/concurrent.js');
+  this.template(this.configPath+'/connect.js');
+  this.template(this.configPath+'/copy.js');
+  this.template(this.configPath+'/htmlmin.js');
+  this.template(this.configPath+'/imagemin.js');
+  this.template(this.configPath+'/jshint.js');
+  this.template(this.configPath+'/rev.js');
+  this.template(this.configPath+'/svgmin.js');
+  this.template(this.configPath+'/usemin.js');
+  this.template(this.configPath+'/useminPrepare.js');
+  this.template(this.configPath+'/watch.js');
+
+  if (this.testFramework === 'mocha'){
+    this.template(this.configPath+'/mocha.js');
+  }else if(this.testFramework === 'jasmine'){
+    this.template(this.configPath+'/jasmine.js');
+  }
+  if(this.coffee){
+    this.template(this.configPath+'/coffee.js');
+  }
+  if(this.includeCompass){
+    this.template(this.configPath+'/compass.js');
+  }
+  if(this.includeModernizr){
+    this.template(this.configPath+'/modernizr.js');
+  }
 };
 
 AppGenerator.prototype.packageJSON = function packageJSON() {

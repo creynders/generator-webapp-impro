@@ -4,6 +4,29 @@ var path    = require('path');
 var helpers = require('yeoman-generator').test;
 
 describe('Webapp generator test', function () {
+  var base = [
+    'Gruntfile.js',
+    'config/autoprefixer.js',
+    'config/bowerInstall.js',
+    'config/clean.js',
+    'config/compass.js',
+    'config/concurrent.js',
+    'config/connect.js',
+    'config/copy.js',
+    'config/htmlmin.js',
+    'config/jshint.js',
+    'config/mocha.js',
+    'config/rev.js',
+    'config/svgmin.js',
+    'config/usemin.js',
+    'config/useminPrepare.js',
+    'config/watch.js',
+    'app/404.html',
+    'app/favicon.ico',
+    'app/robots.txt',
+    'app/index.html',
+    'app/styles/main.scss'
+  ];
   beforeEach(function (done) {
     helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
       if (err) {
@@ -31,13 +54,13 @@ describe('Webapp generator test', function () {
     var expected = [
       ['bower.json', /"name": "temp"/],
       ['package.json', /"name": "temp"/],
-      ['Gruntfile.js', /coffee:/],
-      'app/404.html',
-      'app/favicon.ico',
-      'app/robots.txt',
-      'app/index.html',
+      'config/coffee.js',
       'app/scripts/main.coffee',
-      'app/styles/main.scss'
+    ].concat(base);
+
+    var notExpected = [
+      'configjasmine.js',
+      'configmodernizr.js'
     ];
 
     helpers.mockPrompt(this.webapp, {
@@ -47,6 +70,7 @@ describe('Webapp generator test', function () {
     this.webapp.coffee = true;
     this.webapp.run({}, function () {
       helpers.assertFiles(expected);
+      helpers.assertNoFile(notExpected);
       done();
     });
   });
@@ -55,13 +79,12 @@ describe('Webapp generator test', function () {
     var expected = [
       ['bower.json', /"name": "temp"/],
       ['package.json', /"name": "temp"/],
-      'Gruntfile.js',
-      'app/404.html',
-      'app/favicon.ico',
-      'app/robots.txt',
-      'app/index.html',
-      'app/scripts/main.js',
-      'app/styles/main.scss'
+    ].concat(base);
+    var notExpected = [
+      'app/scripts/main.coffee',
+      'config/coffee.js',
+      'config/jasmine.js',
+      'config/modernizr.js'
     ];
 
     helpers.mockPrompt(this.webapp, {
@@ -71,6 +94,7 @@ describe('Webapp generator test', function () {
     this.webapp.coffee = false;
     this.webapp.run({}, function () {
       helpers.assertFiles(expected);
+      helpers.assertNoFile(notExpected);
       done();
     });
   });
@@ -79,13 +103,12 @@ describe('Webapp generator test', function () {
     var expected = [
       ['bower.json', /"name": "temp"/],
       ['package.json', /"name": "temp"/],
-      'Gruntfile.js',
-      'app/404.html',
-      'app/favicon.ico',
-      'app/robots.txt',
-      'app/index.html',
-      'app/scripts/main.js',
-      'app/styles/main.scss'
+    ].concat(base);
+    var notExpected = [
+      'app/scripts/main.coffee',
+      'config/coffee.js',
+      'config/jasmine.js',
+      'config/modernizr.js'
     ];
 
     helpers.mockPrompt(this.webapp, {
@@ -94,6 +117,7 @@ describe('Webapp generator test', function () {
 
     this.webapp.run({}, function () {
       helpers.assertFiles(expected);
+      helpers.assertNoFile(notExpected);
       done();
     });
   });
