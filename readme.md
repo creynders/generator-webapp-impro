@@ -1,4 +1,4 @@
-# Web app generator improved[![Build Status](https://secure.travis-ci.org/yeoman/generator-webapp.png?branch=master)](http://travis-ci.org/yeoman/generator-webapp) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# Web app generator improved[![Build Status](https://secure.travis-ci.org/creynders/generator-webapp-impro.png?branch=master)](http://travis-ci.org/creynders/generator-webapp-impro) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 This is a fork of the official [Yeoman](http://yeoman.io) generator that scaffolds out a front-end web app.
 
@@ -26,8 +26,8 @@ For more information on what `generator-webapp` can do for you, take a look at t
 
 ## Getting Started
 
-- Install: `npm install -g generator-webapp`
-- Run: `yo webapp`
+- Install: `npm install -g generator-webapp-impro`
+- Run: `yo webapp-impro`
 - Run `grunt` for building and `grunt serve` for preview [*](#serve-note)
 
 
