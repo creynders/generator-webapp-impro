@@ -33,7 +33,7 @@ describe('Webapp generator test', function () {
         return done(err);
       }
 
-      this.webapp = helpers.createGenerator('webapp:app', [
+      this.webapp = helpers.createGenerator('webapp-impro:app', [
         '../../app', [
           helpers.createDummyGenerator(),
           'mocha:app'
