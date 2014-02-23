@@ -1,7 +1,7 @@
 {
   "name": "generator-webapp-impro",
   "version": "0.1.0",
-  "description": "Scaffold out a front-end web app",
+  "description": "Improved yeoman webapp generator",
   "license": "BSD",
   "repository": "creynders/generator-webapp-impro",
   "author": "Camille Reynders",
