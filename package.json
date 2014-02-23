@@ -1,10 +1,10 @@
 {
-  "name": "generator-webapp",
-  "version": "0.4.7",
+  "name": "generator-webapp-impro",
+  "version": "0.1.0",
   "description": "Scaffold out a front-end web app",
   "license": "BSD",
-  "repository": "yeoman/generator-webapp",
-  "author": "The Yeoman Team",
+  "repository": "creynders/generator-webapp-impro",
+  "author": "Camille Reynders",
   "main": "app/index.js",
   "engines": {
     "node": ">=0.10.0",
