@@ -1,6 +1,11 @@
-# Web app generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-webapp.png?branch=master)](http://travis-ci.org/yeoman/generator-webapp) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# Web app generator improved[![Build Status](https://secure.travis-ci.org/yeoman/generator-webapp.png?branch=master)](http://travis-ci.org/yeoman/generator-webapp) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-[Yeoman](http://yeoman.io) generator that scaffolds out a front-end web app.
+This is a fork of the official [Yeoman](http://yeoman.io) generator that scaffolds out a front-end web app.
+
+## Differences
+
+* Uses **`jit-grunt`** instead of `load-grunt-tasks`
+* Generates **grunt configuration in separate files** and uses `load-grunt-configs` to load them.
 
 ![](http://i.imgur.com/uKTT2Hj.png)
 
